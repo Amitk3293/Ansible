@@ -6,6 +6,7 @@
     service:
      name:  #ServiceName
      state: #started/stopped/restarted
+     enabled: #no/yes
 -
 
 
@@ -18,3 +19,4 @@
     service:
      name:  b2c-platform-gateway
      state: started
+     enabled: yes

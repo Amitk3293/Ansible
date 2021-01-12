@@ -1,0 +1,13 @@
+
+#Play few playbooks
+
+---
+
+#- import_playbook: /root/scripts/XXX.yaml
+#- import_playbook: /root/scripts/XXX2.yaml
+#- import_playbook: /root/scripts/XXX3.yaml
+#- import_playbook: /root/scripts/XXX4.yaml
+
+
+#Example
+- import_playbook: /root/scripts/mainteance/windows_maintenance/prod/start-iis-services.yaml

@@ -7,7 +7,7 @@
   - name: TaskName
     win_service:
      name: Servicename #service Name
-     state: restarted 
+     state: #restarted/stopped/started
     
 
 

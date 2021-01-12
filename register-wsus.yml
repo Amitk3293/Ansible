@@ -3,7 +3,7 @@
 #Stop Winupdate Service
 
 - name: register-WSUS
-  hosts: ams-ad-comps
+  hosts: ams-ad-comps #host/hostgroup
   tasks:
   - name: Stop wuauserv
     win_service:

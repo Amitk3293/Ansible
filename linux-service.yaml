@@ -1,0 +1,20 @@
+---
+- name: #ProjectName
+  hosts: #HostName
+  tasks:
+  - name: #Taskname
+    service:
+     name:  #ServiceName
+     state: #started/stopped/restarted
+-
+
+
+
+#Example
+- name: Mainteance-stop
+  hosts: production-gw
+  tasks:
+  - name: Stop service gw
+    service:
+     name:  b2c-platform-gateway
+     state: started

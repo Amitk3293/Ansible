@@ -1,0 +1,25 @@
+---
+- name: ProjectName
+  hosts: Hostname 
+  ignore_errors: yes #If we want to ignore erros and continue the below tasks
+  gather_facts: no 
+  tasks:
+  - name: TaskName
+    win_service:
+     name: Servicename #service Name
+     state: restarted 
+    
+
+
+
+#Example
+- name: maintenance
+  hosts: prod-bo
+  ignore_errors: yes
+  gather_facts: no
+  tasks:
+  - name: re-starting iis-services-IIS
+    win_service:
+     name: W3svc
+     state: restarted
+    

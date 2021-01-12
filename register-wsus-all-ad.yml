@@ -1,0 +1,43 @@
+---
+
+#Stop Winupdate Service
+
+- name: register-WSUS
+  hosts: ams-ad-comps
+  tasks:
+  - name: Stop wuauserv
+    win_service:
+     name: wuauserv
+     state: stopped
+
+#Del reg keys
+
+- name: register-WSUS
+  hosts: ams-ad-comps
+  ignore_errors: yes
+  tasks:
+   - name: del regs
+     win_shell: |
+      reg.exe delete HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate /v SusClientId /f
+      reg.exe delete HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate /v SusClientIDValidation /f
+
+#Start Winupdate Service
+
+- name: register-WSUS
+  hosts: ams-ad-comps
+  tasks:
+  - name: start wuauserv
+    win_service:
+     name: wuauserv
+     state: started
+
+
+#Register to WSUS
+- name: register-WSUS
+  hosts: ams-ad-comps
+  tasks:
+   - name: register WSUS
+     win_shell: |
+      $updateSession = new-object -com "Microsoft.Update.Session";$updates=$updateSession.CreateupdateSearcher().Search($criteria).Updates
+       wuauclt /reportnow
+

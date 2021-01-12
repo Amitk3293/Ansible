@@ -1,0 +1,19 @@
+---
+
+- name: TaskName
+  hosts: MyHost/s
+  tasks:
+   - name: TaskName
+     win_shell: |
+      TheCommands
+
+
+
+#Example-gpupdate-force
+
+- name: gpupdate-force
+  hosts: ams-bi-03
+  tasks:
+   - name: gpupdates-force
+     win_shell: |
+      gpupdate /froce

@@ -1,0 +1,34 @@
+---
+
+- name: Force Node online
+  hosts: bigip
+  connection: local
+
+  tasks:
+     - name: Force node online
+       bigip_node:
+         state: enabled
+         name: QA01-BO01
+         provider:
+           server: "192.168.110.246"
+           user: "amitk"
+           password: "Asdfgh1234!"
+           validate_certs: "false"
+
+---
+
+
+#- name: (Project Name)
+#  hosts: (Hostname as ansible hosts file)
+#  connection: local
+#
+#  tasks:
+#     - name: #Task Name)
+#       bigip_node:
+#         state: (Node State) #present #absent #enabled #disabled #offline
+#         name: #NodeName)
+#         provider:
+#           server: #"F5-IP" #X.X.X.X
+#           user: #"username"
+#           password: #"password"
+#           validate_certs: #"ssh-key?" #false #yes #no    

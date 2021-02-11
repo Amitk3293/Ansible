@@ -1,0 +1,183 @@
+ #Play1 - Node-LB OFF
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC01 oflline
+       bigip_node:
+         state: offline
+         name: AMS-NGKYC01
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+     - pause: seconds=5
+
+ #Play2 - IISreset
+
+- name: raptors LBoff-iisrest one by one
+  hosts: AMS-NGKYC01
+  tasks:
+     - name: Reset-iis ams-ngkyc01
+       win_service:
+         name: W3Svc
+         state: restarted
+
+     - pause: seconds=30
+
+ #Play3 - Node-LB ON
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC01 online
+       bigip_node:
+         state: enabled
+         name: AMS-NGKYC01
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+ #Play1 - Node-LB OFF
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC02 oflline
+       bigip_node:
+         state: offline
+         name: AMS-NGKYC02
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+     - pause: seconds=5
+
+ #Play2 - IISreset
+
+- name: raptors LBoff-iisrest one by one
+  hosts: AMS-NGKYC02
+  tasks:
+     - name: Reset-iis ams-ngkyc02
+       win_service:
+         name: W3Svc
+         state: restarted
+
+     - pause: seconds=30
+
+ #Play3 - Node-LB ON
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC02 online
+       bigip_node:
+         state: enabled
+         name: AMS-NGKYC02
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+ #Play1 - Node-LB OFF
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC03 oflline
+       bigip_node:
+         state: offline
+         name: AMS-NGKYC03
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+     - pause: seconds=5
+
+ #Play2 - IISreset
+
+- name: raptors LBoff-iisrest one by one
+  hosts: AMS-NGKYC03
+  tasks:
+     - name: Reset-iis ams-ngkyc03
+       win_service:
+         name: W3Svc
+         state: restarted
+
+     - pause: seconds=30
+
+ #Play3 - Node-LB ON
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC03 online
+       bigip_node:
+         state: enabled
+         name: AMS-NGKYC03
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+ #Play1 - Node-LB OFF
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC04 oflline
+       bigip_node:
+         state: offline
+         name: AMS-NGKYC04
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"
+
+     - pause: seconds=5
+
+ #Play2 - IISreset
+
+- name: raptors LBoff-iisrest one by one
+  hosts: AMS-NGKYC04
+  tasks:
+     - name: Reset-iis ams-ngkyc04
+       win_service:
+         name: W3Svc
+         state: restarted
+
+     - pause: seconds=30
+
+ #Play3 - Node-LB ON
+
+- name: raptors LBoff-iisrest one by one
+  hosts: bigip
+  connection: local
+  tasks:
+     - name: F5 node AMS-NGKYC04 online
+       bigip_node:
+         state: enabled
+         name: AMS-NGKYC04
+         provider:
+           server: "192.168.100.213"
+           user: "ansible"
+           password: "d57ZDTn8Jp"
+           validate_certs: "false"

@@ -1,6 +1,6 @@
  #Play1 - Node-LB OFF
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -18,7 +18,7 @@
 
  #Play2 - IISreset
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: AMS-NGKYC01
   tasks:
      - name: Reset-iis ams-ngkyc01
@@ -30,7 +30,7 @@
 
  #Play3 - Node-LB ON
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -46,7 +46,7 @@
 
  #Play1 - Node-LB OFF
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -64,7 +64,7 @@
 
  #Play2 - IISreset
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: AMS-NGKYC02
   tasks:
      - name: Reset-iis ams-ngkyc02
@@ -76,7 +76,7 @@
 
  #Play3 - Node-LB ON
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -92,7 +92,7 @@
 
  #Play1 - Node-LB OFF
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -110,7 +110,7 @@
 
  #Play2 - IISreset
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: AMS-NGKYC03
   tasks:
      - name: Reset-iis ams-ngkyc03
@@ -122,7 +122,7 @@
 
  #Play3 - Node-LB ON
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -138,7 +138,7 @@
 
  #Play1 - Node-LB OFF
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:
@@ -156,7 +156,7 @@
 
  #Play2 - IISreset
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: AMS-NGKYC04
   tasks:
      - name: Reset-iis ams-ngkyc04
@@ -168,7 +168,7 @@
 
  #Play3 - Node-LB ON
 
-- name: raptors LBoff-iisrest one by one
+- name: F5 LB with IISreset integration on AMS-NGKYC01-04 one bye one
   hosts: bigip
   connection: local
   tasks:

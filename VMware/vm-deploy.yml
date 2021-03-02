@@ -1,0 +1,43 @@
+---
+# Deploy a VM from a template using Ansible 'vmware_guest' module
+- name: Deploy VM from template
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: clone VM From Template
+    vmware_guest:
+      hostname: '10.202.10.202'
+      username: 'administrator@vsphere.local'
+      password: 'Parag0nex!'
+      validate_certs: no
+      datacenter: 'AMS'
+      cluster: 'FRX3 - Gen9 - STG'
+      #resource_pool: '{{ deploy_vsphere_resourcepool }}'
+      folder: 'Discovered virtual machine'
+      name: 'Test-Ansible'
+      state: 'poweredon'
+      guest_id: 'null'
+      annotation: "null"
+      template: 'CentOS 7_Jan-2021'
+      wait_for_ip_address: no
+      disk:
+      - size_gb: 50 
+        type: thin
+        datastore: '3PAR01_VMFS01'
+      networks:
+      - name: 'Admin vid 10'
+        ip: '10.202.10.220'
+        netmask: '255.255.255.0'
+        gateway: '10.202.10.253'
+        dns_servers:
+        - '10.202.10.1'
+        - '10.202.10.2'
+        hardware:
+        memory_mb: '16000'
+        num_cpus: '2'
+      customization:
+        dns_servers:
+        - '10.202.10.1'
+        - '10.202.10.2'
+        domain: 'frxfarm.local'
+        hostname: 'test-ansible'

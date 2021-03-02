@@ -1,0 +1,44 @@
+---
+# Deploy a VM from a template using Ansible 'vmware_guest' module
+- name: Deploy VM from template
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: clone VM From Template
+    vmware_guest:
+      hostname: “{{ vcenter_hostname }}”
+      username: “{{ vcenter_username }}”
+      password: “{{ vcenter_password }}”
+      validate_certs: “{{ validate_certs | default(‘False’) }}”
+      datacenter: “{{ vm_datacenter }}”
+      cluster: “{{ cluster_name }}”
+      #resource_pool: '{{ deploy_vsphere_resourcepool }}'
+      folder: “{{ vm_folder }}”
+      name: 'Test-Ansible'
+      state: 'poweredon'
+      guest_id: 'null'
+      annotation: “{{ vm_notes | default(‘Provisioned by ansible’) }}”
+      template: “{{ vm_template }}”
+      wait_for_ip_address: “{{ yes/no }}”
+      disk:
+      - size_gb: “{{ disk_size | default(‘16’) }}”
+        type: “{{ vm_disk_type | default(‘thin’) }}”
+        datastore: “{{ vm_datastore }}”
+      networks:
+      - name: “{{ vm_port_group }}”
+        ip: “{{ vm_ip }}”
+        netmask: “{{ vm_netmask }}”
+        gateway: “{{ vm_Defaultgateway }}”
+        dns_servers:
+        - “{{ dns_server1 }}”
+        - “{{ dns_server2 }}”
+        hardware:
+        memory_mb: “{{ RAM_mb }}”
+        num_cpus: “{{ cpu_number }}”
+      customization:
+        dns_servers:
+        - “{{ dns_server1 }}”
+        - “{{ dns_server2 }}”
+        domain: “{{ domain_name }}”
+        hostname: “{{ vm_hostname }}”
+

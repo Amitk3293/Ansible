@@ -9,9 +9,9 @@
          state: offline
          name: AMS-NGKYC01
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
      - pause: seconds=5
@@ -39,9 +39,9 @@
          state: enabled
          name: AMS-NGKYC01
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
  #Play1 - Node-LB OFF
@@ -55,9 +55,9 @@
          state: offline
          name: AMS-NGKYC02
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
      - pause: seconds=5
@@ -85,9 +85,9 @@
          state: enabled
          name: AMS-NGKYC02
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
  #Play1 - Node-LB OFF
@@ -101,9 +101,9 @@
          state: offline
          name: AMS-NGKYC03
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
      - pause: seconds=5
@@ -131,9 +131,9 @@
          state: enabled
          name: AMS-NGKYC03
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
  #Play1 - Node-LB OFF
@@ -147,9 +147,9 @@
          state: offline
          name: AMS-NGKYC04
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
      - pause: seconds=5
@@ -177,7 +177,7 @@
          state: enabled
          name: AMS-NGKYC04
          provider:
-           server: "192.168.100.213"
-           user: "ansible"
-           password: "d57ZDTn8Jp"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"

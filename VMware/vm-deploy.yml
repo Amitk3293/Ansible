@@ -6,9 +6,9 @@
   tasks:
   - name: clone VM From Template
     vmware_guest:
-      hostname: '10.202.10.202'
-      username: 'administrator@vsphere.local'
-      password: 'Parag0nex!'
+      hostname: “{{ vcenter_hostname }}”
+      username: “{{ vcenter_username }}”
+      password: “{{ vcenter_password }}”
       validate_certs: no
       datacenter: 'AMS'
       cluster: 'FRX3 - Gen9 - STG'

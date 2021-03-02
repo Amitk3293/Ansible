@@ -10,9 +10,9 @@
          state: enabled
          name: QA01-BO01
          provider:
-           server: "192.168.110.246"
-           user: "amitk"
-           password: "Asdfgh1234!"
+           server: “{{ f5_hostname }}”
+           user: “{{ f5_username }}”
+           password: “{{ f5_password }}”
            validate_certs: "false"
 
 ---

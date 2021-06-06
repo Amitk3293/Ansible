@@ -1,0 +1,12 @@
+---
+- hosts: nagios
+  connection: local
+  tasks:
+    - name: Schedule an hour of HOST downtime
+      delegate_to: ams-nagios01.frxfarm.local
+      community.general.nagios:
+        action: downtime
+        minutes: 60
+        service: all
+        host: 'InfoBIP'
+        comment: 'Platform version'
